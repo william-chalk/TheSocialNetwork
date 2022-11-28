@@ -6,6 +6,7 @@
 //Virtual friendCount that retrieves the length of the User's freinds array feild on query
 
 const { Schema, model } = require("mongoose");
+const validateEmail = require("../utils/emailValidator");
 
 const UserSchema = new Schema(
   {
@@ -17,6 +18,9 @@ const UserSchema = new Schema(
     email: {
       type: String,
       required: "Please provide an email",
+      unique: true,
+      validate: [validateEmail, "invalid email"],
+      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "invalid email"],
     },
     thoughts: [
       {

@@ -14,6 +14,10 @@ mongoose.connect(
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+  },
+  //deletes previous database for testing purposes
+  function () {
+    mongoose.connection.db.dropDatabase();
   }
 );
 

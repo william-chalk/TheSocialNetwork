@@ -1,6 +1,7 @@
 const { User } = require("../models");
 
 const userController = {
+  //gets all users in the collection
   getAllUsers(req, res) {
     User.find({})
       .populate({
@@ -14,6 +15,7 @@ const userController = {
         res.status(400).json(err);
       });
   },
+  //gets a user by their id in the collection
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
@@ -33,11 +35,13 @@ const userController = {
         res.status(400).json(err);
       });
   },
+  //adds a user to the collection
   createUser({ body }, res) {
     User.create(body)
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(400).json(err));
   },
+  //updates a user thats currently in the collection
   updateUser({ params, body }, res) {
     User.findOneAndUpdate({ _id: params.id }, body, {
       new: true,
@@ -52,6 +56,7 @@ const userController = {
       })
       .catch((err) => res.status(400).json(err));
   },
+  //removes a user from the collection
   deleteUser({ params }, res) {
     User.findOneAndDelete({ _id: params.id })
       .then((dbUserData) => {

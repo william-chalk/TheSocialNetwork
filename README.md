@@ -23,7 +23,11 @@ npm i
 # Usage
 
 For User to discuss diffrent ideas and connect over the web
-
+```
+![User Routes](https://www.youtube.com/watch?v=DYx3cBK98Gg&ab_channel=WilliamChalk)
+![Thought Routes](https://www.youtube.com/watch?v=zJhpJ11XEQs&ab_channel=WilliamChalk)
+![Friend and Reaction Routes](https://www.youtube.com/watch?v=oWYgHSSYHQ8&ab_channel=WilliamChalk)
+```
 # Features
 
 - Ability to post your thoughts for others to see
